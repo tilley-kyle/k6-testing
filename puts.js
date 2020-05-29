@@ -8,8 +8,8 @@ export const options = {
   duration: '5s',
 };
 
-const ec2Helpful = 'ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/helpful/1';
-const ec2Report = 'ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/report/1';
+const ec2Helpful = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/helpful/1';
+const ec2Report = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/report/1';
 
 export default () => {
   const res = http.put(ec2Helpful);
