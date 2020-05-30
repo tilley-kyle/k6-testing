@@ -13,7 +13,7 @@ const ec2AddReview = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:815
 export default () => {
   const res = http.put(ec2AddReview);
   const result = check(res, {
-    'is status 204': (r) => r.status === 204,
+    'Is status 204': (r) => r.status === 204,
   });
   errorRate.add(!result);
   sleep(1);

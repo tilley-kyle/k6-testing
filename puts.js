@@ -14,7 +14,7 @@ const ec2Report = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/r
 export default () => {
   const res = http.put(ec2Helpful);
   const result = check(res, {
-    'is status 204': (r) => r.status === 204,
+    'Is status 204': (r) => r.status === 204,
   });
   errorRate.add(!result);
   sleep(1);

@@ -4,8 +4,10 @@ import { Rate } from 'k6/metrics';
 
 export const errorRate = new Rate('errors');
 export const options = {
-  vus: 1,
-  duration: '5s',
+  stages: [
+    {duration: '5s', target: 10},
+    {duration: '5s', target: 1000},
+  ],
 };
 
 const ec2GetAll = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/1/list';
@@ -13,9 +15,10 @@ const ec2GetMeta = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/
 
 
 export default () => {
-  const res = http.get(ec2GetAll);
+  let random = Math.floor(Math.random() * 1000000 + 1);
+  const res = http.get(`http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/1/list`);
   const result = check(res, {
-    'is status 200': (r) => r.status === 200,
+    'Is status 200': (r) => r.status === 200,
   });
   errorRate.add(!result);
   sleep(1);
