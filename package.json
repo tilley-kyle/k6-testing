@@ -6,7 +6,7 @@
   "scripts": {
     "all": "k6 run get-all.js",
     "meta": "k6 run get-meta.js",
-    "post": "k6 run post.js",
+    "add": "k6 run post-add.js",
     "report": "k6 run put-report.js",
     "helpful": "k6 run put-helpful.js"
   },

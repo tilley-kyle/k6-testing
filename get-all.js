@@ -4,12 +4,13 @@ import { Rate, Trend } from 'k6/metrics';
 
 export const errorRate = new Rate('errors');
 export const options = {
-  stages: [
-    {duration: '5s', target: 100},
-    {duration: '20s', target: 500},
-    {duration: '20s', target: 1000},
-    {duration: '10s', target: 100}
-  ]
+  vus: 1500,
+  duration: '30s'
+  // stages: [
+  //   {duration: '10s', target: 100},
+  //   {duration: '60s', target: 300}
+  //   {duration: '10s', target: 100}
+  // ]
 };
 
 const ec2GetAll = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/1/list';
