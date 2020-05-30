@@ -4,10 +4,11 @@
   "description": "First test suite, originally made 5/29/2020 to test my SDC",
   "main": "index.js",
   "scripts": {
-    "get-all": "k6 run get-all.js",
-    "get-meta": "k6 run get-meta.js",
+    "all": "k6 run get-all.js",
+    "meta": "k6 run get-meta.js",
     "post": "k6 run post.js",
-    "put": "k6 run put.js"
+    "report": "k6 run put-report.js",
+    "helpful": "k6 run put-helpful.js"
   },
   "author": "Kyle Tilley",
   "license": "ISC"
