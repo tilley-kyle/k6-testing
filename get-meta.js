@@ -10,13 +10,12 @@ export const options = {
   ],
 };
 
-const ec2GetAll = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/1/list';
 const ec2GetMeta = 'http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/1/meta';
 
 
 export default () => {
-  let random = Math.floor(Math.random() * 1000000 + 1);
-  const res = http.get(`http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/1/list`);
+  const id = Math.random() * 10000000 + 1;
+  const res = http.get(`http://ec2-3-133-97-46.us-east-2.compute.amazonaws.com:8154/reviews/${id}/list`);
   const result = check(res, {
     'Is status 200': (r) => r.status === 200,
   });

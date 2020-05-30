@@ -1,6 +1,9 @@
 ## Script to Run
 
-#### npm run get
+#### npm run get-all
+- Load tests the current get route
+
+#### npm run get-meta
 - Load tests the current get route
 
 #### npm run put
