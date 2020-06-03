@@ -16,8 +16,8 @@ export const options = {
 
 
 export default () => {
-  const id = Math.random() * 10000 + 1;
-  const res = http.get(`http://ec2-3-23-131-54.us-east-2.compute.amazonaws.com:8154/reviews/${id}/list`);
+  const id = Math.floor(Math.random() * 10000 + 1);
+  const res = http.get(`http://127.0.0.1:8154/reviews/1/meta`);
   const result = check(res, {
     'Is status 200': (r) => r.status === 200,
   });
